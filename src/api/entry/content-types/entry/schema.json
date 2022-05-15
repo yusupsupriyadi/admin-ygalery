@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "entries",
+  "info": {
+    "singularName": "entry",
+    "pluralName": "entries",
+    "displayName": "entry",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "send_admin": {
+      "type": "boolean"
+    },
+    "song": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::song.song",
+      "inversedBy": "entry"
+    },
+    "date": {
+      "type": "date"
+    },
+    "marketplace": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::marketplace.marketplace",
+      "inversedBy": "entry"
+    }
+  }
+}
